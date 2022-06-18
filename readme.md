@@ -6,3 +6,5 @@
 
 ## Videos
 1. [Factory Pattern](https://youtu.be/YzZAdOsd4x0)
+2. [Singleton Pattern](https://youtu.be/KaF2A2L54Gk)
+3. 
