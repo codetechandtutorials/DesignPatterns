@@ -5,6 +5,6 @@
 - [Series Playlist](https://www.youtube.com/playlist?list=PLalVdRk2RC6otl3oBU2cn-P6DWi1y1PS3)
 
 ## Videos
-1. [Factory Pattern](https://youtu.be/YzZAdOsd4x0)
-2. [Singleton Pattern](https://youtu.be/KaF2A2L54Gk)
-3. 
+1. [Factory & Prototype](https://youtu.be/YzZAdOsd4x0)
+2. [Singleton](https://youtu.be/KaF2A2L54Gk)
+3. [Abstract Factory](https://youtu.be/TjQAoN0ZD9M)
