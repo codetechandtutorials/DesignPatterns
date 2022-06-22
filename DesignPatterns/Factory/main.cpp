@@ -1,3 +1,4 @@
+// Test our factory methods
 #include "spawner.h"
 #include <iostream>
 int main() {

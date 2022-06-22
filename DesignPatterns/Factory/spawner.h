@@ -1,6 +1,8 @@
+#pragma once
 #include "creature.h"
 #include <vector>
 
+// whoever spawns the creatures is responsible for the memory
 class Spawner {
 public:
   virtual ~Spawner() {}

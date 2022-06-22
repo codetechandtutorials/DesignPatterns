@@ -1,3 +1,4 @@
+#pragma once
 class Creature {
 public:
   virtual ~Creature() {};
