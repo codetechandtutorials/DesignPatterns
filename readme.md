@@ -8,3 +8,4 @@
 1. [Factory & Prototype](https://youtu.be/YzZAdOsd4x0)
 2. [Singleton](https://youtu.be/KaF2A2L54Gk)
 3. [Abstract Factory](https://youtu.be/TjQAoN0ZD9M)
+4. [Object Pool](https://youtu.be/lNTYs72Hi_0)
