@@ -11,3 +11,4 @@ This repo is a group of Programming Pattern demos in C++ that have accompained v
 2. [Singleton](https://youtu.be/KaF2A2L54Gk)
 3. [Abstract Factory](https://youtu.be/TjQAoN0ZD9M)
 4. [Object Pool](https://youtu.be/lNTYs72Hi_0)
+5. [Decorator](https://youtu.be/rtfDbdSV4a8)
