@@ -15,3 +15,5 @@ This repo is a group of Programming Pattern demos in C++ that have accompained v
 6. [Decorator2](https://youtu.be/PrVhfdQ1WRk)
 7. [Facade](https://youtu.be/fsCof7BBHTs)
 8. [Adapter](https://youtu.be/SEGXIgoPyZE)
+9. [Composite](https://youtu.be/cNLRH6Fpe0s)
+10. [Proxy](https://youtu.be/9yY6Bc2cgYU)
