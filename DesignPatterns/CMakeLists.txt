@@ -9,3 +9,5 @@ add_subdirectory("Adapter")
 add_subdirectory("Composite")
 add_subdirectory("Proxy")
 add_subdirectory("Flyweight")
+add_subdirectory("Visitor")
+
