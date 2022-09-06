@@ -441,6 +441,7 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+out/
 [Bb]uild/
 
 *.json
