@@ -20,4 +20,4 @@ add_subdirectory("DesignPatterns/Flyweight")
 add_subdirectory("DesignPatterns/Visitor")
 add_subdirectory("DesignPatterns/Observer")
 add_subdirectory("DesignPatterns/Observer2")
-
+add_subdirectory("DesignPatterns/Command")
