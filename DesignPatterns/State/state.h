@@ -44,7 +44,7 @@ public:
 class ConcreteStateA : public State {
 public:
   void DoWorkA() override {
-    std::cout << classname << " called DoWorkA()\n";
+    std::cout << classname << " called DoWorkA()\n" << thing;
   }
   void DoWorkB() override {
     std::cout << classname << " called DoWorkB()\n";
@@ -61,3 +61,4 @@ public:
     std::cout << classname << " called DoWorkB()\n";
   }
 };
+
