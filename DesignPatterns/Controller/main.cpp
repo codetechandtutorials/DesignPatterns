@@ -3,78 +3,87 @@
 
 class BaseComponent;
 
-class Controller {
-  public:
-    virtual void Notify(BaseComponent* sender, std::string event) const = 0;
+class IController {
+public:
+  virtual void Notify(BaseComponent* sender, std::string event) const = 0;
 };
 
-class BaseComponent { 
+class BaseComponent {
 protected:
-  Controller* _controller;
+  IController* _controller;
 public:
-  BaseComponent(Controller* controller = nullptr) : _controller(controller) {}
-
-  void set_controller(Controller* controller) { _controller = controller; }
-};
-
-class Component1 : public BaseComponent {
-public:
-  void NotifyControllerOfThing() {
-    std::cout << "Component1 is notifying controller about Thing\n";
-    _controller->Notify(this, "Thing");
-  }
-  void NotifyControllerOfDirection() {
-      std::cout << "Component1 is notifying controller about Direction\n";
-
-    _controller->Notify(this, "Direction");
+  BaseComponent(IController* controller = nullptr) : _controller(controller) {}
+  void set_controller(IController* controller) {
+    _controller = controller;
   }
 };
 
-class Component2 : public BaseComponent {
+class AirplaneComponent : public BaseComponent {
 public:
-  void NotifyControllerOfDoodad() {
-        std::cout << "Component2 is notifying controller about Doodad\n";
-    _controller->Notify(this, "Doodad");
+  void FlyForward() {
+    std::cout << "AirplaneComponent is Flying Forward\n";
+    _controller->Notify(this, "Forward");
   }
-  void NotifyControllerOfGrass() {
-        std::cout << "Component2 is notifying controller about Grass\n";
-    _controller->Notify(this, "Grass");
+  void Landing() {
+    std::cout << "AirplaneComponent is Landing\n";
+    _controller->Notify(this, "Land");
   }
 };
 
-class ConcreteController : public Controller {
+
+class WeatherComponent : public BaseComponent {
+public:
+  void Raining() {
+    std::cout << "WeatherComponent begins raining\n";
+    _controller->Notify(this, "Rain");
+  }
+  void Sunshine() {
+    std::cout << "WeatherComponent begins sun\n";
+    _controller->Notify(this, "Sun");
+  }
+};
+
+
+class ConcreteController : public IController {
 private:
-  Component1 *comp1;
-  Component2 *comp2;
+  AirplaneComponent* airplanecomp;
+  WeatherComponent* weathercomp;
 public:
-  ConcreteController(Component1 *c1, Component2 *c2) : comp1(c1), comp2(c2) {
-    comp1->set_controller(this);
-    comp2->set_controller(this);
+  ConcreteController(AirplaneComponent* ac,  WeatherComponent* wc) : airplanecomp(ac), weathercomp(wc) {
+    airplanecomp->set_controller(this);
+    weathercomp->set_controller(this);
   }
-  void Notify(BaseComponent* sender, std::string event) const override {
-    std::cout << "controller recieved event: " << event << std::endl;
 
-    if (event == "Thing") {
-      comp2->NotifyControllerOfGrass();
+  void Notify(BaseComponent* sender, std::string event) const override { 
+    std::cout << "event recieved: " << event << std::endl;
+    if (event == "Sun") {
+      airplanecomp->Landing();
     }
-
-    if (event == "Doodad") {
-      comp1->NotifyControllerOfDirection();
+    if (event == "Land") {
+      std::cout << "airplane is landing\n";
     }
   }
 };
 
 
 int main() {
-  Component1* c1 = new Component1;
-  Component2* c2 = new Component2;
+  AirplaneComponent* airplane = new AirplaneComponent;
+  WeatherComponent* weather = new WeatherComponent;
 
-  ConcreteController* controller = new ConcreteController(c1, c2);
+  ConcreteController* controller = new ConcreteController(airplane, weather);
 
-  c1->NotifyControllerOfThing();
+  airplane->Landing();
 
-  delete c1;
-  delete c2;
+  weather->Sunshine();
+
+  weather->Raining();
+
+  airplane->FlyForward();
+
+
+  delete airplane;
+  delete weather;
   delete controller;
+
   return 0;
 }
